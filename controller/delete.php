@@ -1,8 +1,11 @@
 <?php
 //apagar mensagem
+inc([
+    'db'
+]);
 $id=segment(3);
-$op=segment(4);
-if(is_numeric($id) && $op=='apagar'){
+$op=segment(2);
+if(is_numeric($id) && $op=='delete'){
     apagarMensagem($id);
     redirect($_ENV['SITE_URL']);
 }

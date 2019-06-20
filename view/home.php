@@ -21,8 +21,8 @@ view('home/inc/header',$data);
                     print '</b> escreveu em ';
                     print date('d/M/Y \a\s G:i',$mensagem['created_at']);
                     if($user && $user['id']==$mensagem['user_id']){
-                        $link=$_ENV['SITE_URL'].'mensagem/'.$mensagem['id'];
-                        $link=$link.'/apagar';
+                        $link=$_ENV['SITE_URL'].'mensagem/delete/';
+                        $link.=$mensagem['id'];
                         print ' (<a href="'.$link.'">Apagar</a>)';
                     }
                     print ':</small><p>';
