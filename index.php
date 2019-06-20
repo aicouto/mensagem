@@ -1,0 +1,27 @@
+<?php
+if(!defined('ROOT')){
+    require_once '../basic/basic.php';
+}
+inc([
+    'auth',
+    'e',
+    'env',
+    'error',
+    'controller',
+    'method',
+    'model',
+    'redirect',
+    'segment',
+    'view'
+]);
+if(segment(2)){
+    $controller='mensagem/'.segment(2);
+}else{
+    $controller='mensagem/home';
+}
+if(controller($controller)){
+    controller($controller);
+}else{
+    view('home/404');
+}
+?>
